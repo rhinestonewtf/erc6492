@@ -9,14 +9,27 @@ alloy = { version = "0.9.2", default-features = false }
 
 [dependencies]
 alloy = { workspace = true, features = [
-    "reqwest",
     "sol-types",
-    "providers",
     "rpc-types",
+    "transports"
+] }
+
+alloy-provider = { version = "0.9.2", default-features = false, features = [
+    "reqwest",
+    "reqwest-rustls-tls",
+] }
+
+alloy-transport-http = { version = "0.9.2", default-features = false, features = [
+    "reqwest",
+    "reqwest-rustls-tls",
+] }
+
+reqwest = { version = "0.12.12", default-features = false, features = [
+    "rustls-tls",
 ] }
 
 [dev-dependencies]
-alloy = { workspace = true, features = ["signer-local"] }
+alloy = { workspace = true, features = ["signer-local", "network", "reqwest", "providers"] }
 alloy-node-bindings = { git = "https://github.com/alloy-rs/alloy.git", tag = "v0.8.3", default-features = false }
 regex = { version = "1", default-features = false }
 tokio = { version = "1", default-features = false, features = [

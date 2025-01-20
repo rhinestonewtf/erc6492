@@ -1,10 +1,12 @@
-use alloy::{
-    primitives::{Address, Bytes, B256},
-    providers::Provider,
-    rpc::types::{TransactionInput, TransactionRequest},
-    sol,
-    sol_types::SolConstructor,
-    transports::{Transport, TransportErrorKind},
+use {
+    alloy::{
+        primitives::{Address, Bytes, B256},
+        rpc::types::{TransactionInput, TransactionRequest},
+        sol,
+        sol_types::SolConstructor,
+        transports::{Transport, TransportErrorKind},
+    },
+    alloy_provider::Provider,
 };
 
 pub mod create;
